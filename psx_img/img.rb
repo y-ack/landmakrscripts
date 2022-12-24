@@ -12,7 +12,7 @@ class SubImageHeader < BinData::Record
 	uint16 :height
 end
 
-filename = "WMESB.IMG"
+filename = ARGV[0]
 data = File.open(filename, "rb") { |f| f.read }
 
 subimage_cnt = data.slice(0,4).unpack("L<").first
